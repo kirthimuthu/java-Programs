@@ -12,8 +12,15 @@ public class StringLearnings {
 		//sl.count_of_vowels("muthu");
 		//sl.print_only_numbers("preethi12345");
 		//sl.print_only_chars("kiruthika12345");
-		sl.print_only_spl_chars("naveenkumar_12345mail.com");
+		//sl.print_only_spl_chars("naveenkumar_12345mail.com");
+		sl.sum_numbers("gowthaman123456");
 		
+		
+		
+	}
+
+	private void sum_numbers(String string) {
+		// TODO Auto-generated method stub
 		
 	}
 
