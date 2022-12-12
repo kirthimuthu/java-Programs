@@ -1,10 +1,13 @@
 package tamilnadu.java;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
+import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class CollectionDemo {
@@ -22,11 +25,87 @@ public class CollectionDemo {
 		//cd.learn_Iteration3(); 
 		//cd.learn_Iteration4(); 
 		//cd.learn_Iteration5(); 
-		cd.learn_Iteration6(); 
+		//cd.learn_Iteration6(); 
+		//cd.learn_Map();
+		cd.frequency_of_element();
+				//Type Safety
+				ArrayList<Float> al = new ArrayList<Float>();
+				al.add(5.5f);
+				al.add(6.5f);
+				//al.add(5);
+				GenericsDemo gd = new GenericsDemo();
+				//gd.calculate(al);
 
+			}
+
+			private void frequency_of_element() {
+				// TODO Auto-generated method stub
+				String name = "java ";
+				HashMap<Character,Integer> hm = new HashMap<Character,Integer>(); 
+				for(int i =0; i <name.length();i++)
+				{
+				char ch = name.charAt(i);
+				boolean present = hm.containsKey(ch);
+				if(present == false)
+				{
+					hm.put(ch, 1); //a=1,r=1,u=1,n=1,k=1, u=1
+				}
+				else
+				{
+					int freq = (Integer) hm.get(ch);
+					hm.put(ch, freq+1);
+				}
+				}
+				System.out.println(hm);
+				Set s = hm.entrySet();
+				for(Object ob:s)
+				{
+					Entry entry = (Entry)ob;
+					int val = (Integer)	entry.getValue();
+					if(val==1)
+					{
+						System.out.println(entry);
+					}
+				}
+				
+			}
 		
-	}	
+		
 	
+	private void learn_Map() {
+		// TODO Auto-generated method stub
+		HashMap hm = new HashMap();
+		hm.put("Idli", 10);
+		hm.put("Dosai", 30);
+		hm.put("Pongal", 30);
+		hm.put("Poori", 40);
+		hm.put("Vadai", 10);
+		hm.put("Chapathi", 40);
+		System.out.println(hm); 
+		System.out.println(hm.keySet());
+		System.out.println(hm.values());
+		System.out.println(hm.containsKey("Chapathi"));
+		System.out.println(hm.containsValue(10));
+		System.out.println(hm.entrySet());
+		hm.remove("Vadai");
+		System.out.println(hm);
+		hm.replace("Chapathi", 45);
+		System.out.println(hm);
+		hm.put("Masal Dosai", 60);
+		hm.put("Dosai", 50);
+		System.out.println(hm);
+		//hm.clear(); 
+		Set s = hm.entrySet();
+		for(Object ob:s)
+		{
+			Entry entry = (Entry)ob;
+			Integer price = (Integer) entry.getValue();
+			entry.setValue(price+5);
+			System.out.println(entry); 
+		} 
+	}
+	
+
 	private void learn_Iteration6() {
 		// TODO Auto-generated method stub
 		ArrayList al = new ArrayList(); 
